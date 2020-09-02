@@ -33,7 +33,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:3, isStatic:true});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0, isStatic:true});
 	World.add(world, packageBody);
 	
 
@@ -42,7 +42,7 @@ function setup() {
 	 World.add(world, ground);
 	 
 	 box1 = new Box(width/2,600,250,20)
-	 box2 = new Box(250,648,20,180)
+	 box2 = new Box(310,648,20,180)
 	 box3 = new Box(500,648,20,180)
 
 
@@ -68,6 +68,6 @@ function keyPressed() {
  if (keyCode === DOWN_ARROW) {
     // Look at the hints in the document and understand how to make the package body fall only on
 	Matter.Body.setStatic(packageBody, false)
-	packageBody.restitution = 0.65
+	packageBody.restitution = 0
   }
 }
